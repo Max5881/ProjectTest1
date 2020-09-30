@@ -1,8 +1,6 @@
 package ru.sapteh;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Program {
     public static void main(String[] args)throws IOException {
@@ -15,6 +13,15 @@ public class Program {
         int date = Integer.parseInt(reader.readLine());
         Person person = new Person(name,age,date);
         System.out.println(personEmpty(person));
+        File dir = new File("C:/Java_42/Mon");
+        File file= new File ("C:/Java_42/Mon/ghg.txt");
+        System.out.println(dir.mkdir()? "success" : "error");
+        System.out.println(dir.createNewFile()? "success" : "error");
+        FileWriter fw = new FileWriter(file);
+        System.out.println(personEmpty(person));
+        fw.write(personEmpty(person));
+        fw.close();
+
     }
     public static String personEmpty(Person p){
         String err="";
